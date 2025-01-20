@@ -1,37 +1,40 @@
-//const prize = 0.21;
-
-//let kmViaggio = Number(prompt("inserisci i km di viaggio"));
-
-//let etaPersona = Number(prompt("inserisci la tua eta"));
-
-//let costo = (prize * kmViaggio);
-
-//let costoSconto = 0;
-
-//if (etaPersona < 18 ) {
-//    costoSconto = (costo / 100 * 20);
-//} else if (etaPersona >= 65) {
-//    costoSconto = (costo / 100 * 40);
-//}
-
-//console.log( "costo scontato: ",Number((costo - costoSconto).toFixed(2)));
-
-//alert( "il tuo costo scontato " + (costo - costoSconto).toFixed(2));
-
 const nome = document.getElementById('name');
 const distanzaTreno = document.getElementById('distance');
 const eta = document.getElementById('age');
 const form = document.querySelector('form');
 
 const nomeBiglietto = document.getElementById('nomeBiglietto');
+const scontoPasseggiero = document.getElementById('sconto');
 const costoBiglietto = document.getElementById('costoBiglietto');
 const carrozzaPasseggiero = document.getElementById('carrozza');
 const codicePasseggiero = document.getElementById('codice');
 
-form.addEventListener('click', function() {
-    const numeroCarrozza = Math.floor(Math.random() * 15) + 1;
-    const numeroCodice = Math.floor(Math.random() * 1000);
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const nomePasseggero = nome.value.trim();
+    const distanza = parseFloat(distanzaTreno.value);
+    const fasciaEta = eta.value;
+
+    const prezzoPerKm = 0.21;
+    let costo = distanza * prezzoPerKm;
+    let sconto = 'Nessuno';
+
+    if (fasciaEta === 'minorenne') {
+        costo -= costo * 0.2;
+        sconto = '20%';
+    } else if (fasciaEta === 'anziano') {
+        costo -= costo * 0.4;
+        sconto = '40%';
+    }
+
+    let numeroCarrozza = Math.floor(Math.random() * 15) + 1;
+    let numeroCodice = Math.floor(Math.random() * 1000);
 
     carrozzaPasseggiero.innerHTML = numeroCarrozza;
     codicePasseggiero.innerHTML = numeroCodice;
+    nomeBiglietto.innerHTML = nomePasseggero;
+    scontoPasseggiero.innerHTML = sconto;
+    costoBiglietto.innerHTML = costo.toFixed(2) + ' €';
 });
+
