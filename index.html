@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>Trenitalia-Biglietto</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Trenitalia-Biglietto</title>
+</head>
 
-    <body>
-        <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
-        <div class="container">
-            <form action="">
-                <div class="form-container">
-                    <div>
-                        <label id="name">Nome Cognome</label>
-                        <input type="text" id="name" placeholder="Inserisci nome">
-                    </div>
-        
-                    <div>
-                        <label id="distance">Km da percorrere</label>
-                        <input type="number" id="distance" placeholder="1">
-                    </div>
-        
-                    <div>
-                        <label id="age">Fascia d'età</label>
-                        <select id="age">
-                            <option value="maggiorenne">18/64</option>
-                            <option value="minorenne">0/18</option>
-                            <option value="anziano">65/100</option>
-                        </select>
-                    </div>
-        
-                    <button class="generate">Genera</button>
+<body>
+    <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+    <div class="container">
+        <form action="">
+            <div class="form-container">
+                <div>
+                    <label for="nameInput">Nome Cognome</label>
+                    <input type="text" id="nameInput" placeholder="Inserisci nome">
                 </div>
-            </form>
     
-            <h2>IL TUO BIGLIETTO</h2>
+                <div>
+                    <label for="distanceInput">Km da percorrere</label>
+                    <input type="number" id="distanceInput" placeholder="1">
+                </div>
     
-            <div class="ticket-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>NOME PASSEGGERO</th>
-                            <th>Offerta</th>
-                            <th>Carrozza</th>
-                            <th>Codice CP</th>
-                            <th>Costo biglietto</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td id ="nomeBiglietto"></td>
-                            <td id ="sconto"></td>
-                            <td id ="carrozza"></td>
-                            <td id ="codice"></td>
-                            <td id ="costoBiglietto"></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div>
+                    <label for="ageSelect">Fascia d'età</label>
+                    <select id="ageSelect">
+                        <option value="maggiorenne">18/64</option>
+                        <option value="minorenne">0/18</option>
+                        <option value="anziano">65/100</option>
+                    </select>
+                </div>
+    
+                <button class="generate" type="submit">Genera</button>
             </div>
+        </form>
+
+        <h2>IL TUO BIGLIETTO</h2>
+
+        <div class="ticket-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>NOME PASSEGGERO</th>
+                        <th>Offerta</th>
+                        <th>Carrozza</th>
+                        <th>Codice CP</th>
+                        <th>Costo biglietto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="nomeBiglietto"></td>
+                        <td id="sconto"></td>
+                        <td id="carrozza"></td>
+                        <td id="codice"></td>
+                        <td id="costoBiglietto"></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <script src="main.js"></script>
-    </body>
+    </div>
+    <script src="main.js"></script>
+</body>
 </html>

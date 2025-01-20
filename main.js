@@ -1,15 +1,15 @@
-const nome = document.getElementById('name');
-const distanzaTreno = document.getElementById('distance');
-const eta = document.getElementById('age');
-const form = document.querySelector('form');
+const nome = document.getElementById("nameInput");
+const distanzaTreno = document.getElementById("distanceInput");
+const eta = document.getElementById("ageSelect");
+const form = document.querySelector("form");
 
-const nomeBiglietto = document.getElementById('nomeBiglietto');
-const scontoPasseggiero = document.getElementById('sconto');
-const costoBiglietto = document.getElementById('costoBiglietto');
-const carrozzaPasseggiero = document.getElementById('carrozza');
-const codicePasseggiero = document.getElementById('codice');
+const nomeBiglietto = document.getElementById("nomeBiglietto");
+const scontoPasseggiero = document.getElementById("sconto");
+const costoBiglietto = document.getElementById("costoBiglietto");
+const carrozzaPasseggiero = document.getElementById("carrozza");
+const codicePasseggiero = document.getElementById("codice");
 
-form.addEventListener('submit', function (event) {
+form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const nomePasseggero = nome.value.trim();
@@ -18,23 +18,22 @@ form.addEventListener('submit', function (event) {
 
     const prezzoPerKm = 0.21;
     let costo = distanza * prezzoPerKm;
-    let sconto = 'Nessuno';
+    let sconto = "Nessuno";
 
-    if (fasciaEta === 'minorenne') {
-        costo -= costo * 0.2;
-        sconto = '20%';
-    } else if (fasciaEta === 'anziano') {
-        costo -= costo * 0.4;
-        sconto = '40%';
+    if (fasciaEta === "minorenne") {
+        costo *= 0.8;
+        sconto = "20%";
+    } else if (fasciaEta === "anziano") {
+        costo *= 0.6;
+        sconto = "40%";
     }
 
-    let numeroCarrozza = Math.floor(Math.random() * 15) + 1;
-    let numeroCodice = Math.floor(Math.random() * 1000);
+    const numeroCarrozza = Math.floor(Math.random() * 15) + 1;
+    const numeroCodice = Math.floor(Math.random() * 1000);
 
     carrozzaPasseggiero.innerHTML = numeroCarrozza;
     codicePasseggiero.innerHTML = numeroCodice;
     nomeBiglietto.innerHTML = nomePasseggero;
     scontoPasseggiero.innerHTML = sconto;
-    costoBiglietto.innerHTML = costo.toFixed(2) + ' €';
+    costoBiglietto.innerHTML = costo.toFixed(2) + " €";
 });
-
