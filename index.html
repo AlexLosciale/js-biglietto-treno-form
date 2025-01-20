@@ -3,24 +3,64 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>biglietto treno</title>
+        <link rel="stylesheet" href="style.css">
+        <title>Trenitalia-Biglietto</title>
     </head>
 
     <body>
-        
+        <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
 
-
-
-
-
-
-
-
-
-
-
-
-        
+        <div class="container">
+            <div class="form-container">
+                <div>
+                    <label for="name">Nome Cognome</label>
+                    <input type="text" id="name" placeholder="Inserisci nome">
+                </div>
+    
+                <div>
+                    <label for="distance">Km da percorrere</label>
+                    <input type="number" id="distance" placeholder="0">
+                </div>
+    
+                <div>
+                    <label for="age">Fascia d'età</label>
+                    <select id="age">
+                        <option value="maggiorenne">18/64</option>
+                        <option value="minorenne">0/18</option>
+                        <option value="anziano">65/100</option>
+                    </select>
+                </div>
+    
+                <div>
+                    <button class="generate">Genera</button>
+                </div>
+            </div>
+    
+            <h2>IL TUO BIGLIETTO</h2>
+    
+            <div class="ticket-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NOME PASSEGGERO</th>
+                            <th>Offerta</th>
+                            <th>Carrozza</th>
+                            <th>Codice CP</th>
+                            <th>Costo biglietto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
         <script src="main.js"></script>
     </body>
 </html>
