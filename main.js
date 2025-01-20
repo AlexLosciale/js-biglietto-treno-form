@@ -27,6 +27,7 @@ form.addEventListener("submit", function (event) {
         costo *= 0.6;
         sconto = "40%";
     }
+    costo=costo<0?0:costo;
 
     const numeroCarrozza = Math.floor(Math.random() * 15) + 1;
     const numeroCodice = Math.floor(Math.random() * 1000);
